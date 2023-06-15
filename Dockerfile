@@ -1,5 +1,5 @@
-FROM ghcr.io/graalvm/graalvm-ce:java11-21.1.0
+FROM ghcr.io/graalvm/graalvm-ce:22.3.2
 
-RUN microdnf install freetype-devel \
-  && gu install native-image \
-  && microdnf clean all
+RUN microdnf -y install freetype-devel \
+  && gu --auto-yes install native-image \
+  && microdnf -y clean all
